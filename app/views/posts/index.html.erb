@@ -1,0 +1,22 @@
+<div class="container">
+  <%= @posts.each do |post| %>
+      <div class="post_list">
+        <h2 class="title">
+
+          <%= link_to post.title,post %>
+        </h2><br>
+        <h3 class="image">
+          <%=image_tag post.image.url(:large) %>
+        </h3>
+      </div>
+      <div id="comments">
+        <h2><%= post.comments.count %> Comments</h2>
+        <%= render post.comments %>
+
+        <h3>Add a comment:</h3>
+        <%= render "comments/form" %>
+
+      </div>
+
+  <% end %>
+</div>
