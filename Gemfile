@@ -8,7 +8,7 @@ end
 gem 'bootstrap-sass', '~> 3.3.6'
 
 
-gem "paperclip", "~> 5.0.0"
+gem "paperclip", "~> 4.2"
 
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
