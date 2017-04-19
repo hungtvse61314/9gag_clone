@@ -1,0 +1,42 @@
+.navigation {
+  background-color: black;
+  padding: 20px;
+
+  .left {
+    > * {
+      float: left;
+      margin-left: 15px;
+      line-height: 62px;
+
+    }
+    .homeclick {
+      text-decoration: none;
+      .name {
+        font-size: 50px;
+        color: white;
+      }
+    }
+
+  }
+  .right {
+    > * {
+      float: right;
+      margin-right: 15px;
+      line-height: 62px;
+      font-size: 26px;
+    }
+    .newpost {
+      text-decoration: none;
+      .name {
+        font-size: 35px;
+        color: aquamarine;
+      }
+    }
+
+  }
+
+}
+.container {
+  text-align: center;
+
+}

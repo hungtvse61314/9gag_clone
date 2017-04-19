@@ -9,6 +9,34 @@
   </head>
 
   <body>
+  <div class="navigation">
+    <div class="left">
+      <%= link_to root_path, class:"homeclick" do %>
+
+          <span class="name">NINEGAG</span>
+      <% end %>
+    </div>
+    <div class="right">
+
+      <%if user_signed_in? %>
+          <%= link_to "Log out", destroy_user_session_path, :method => :delete %>
+
+      <%else %>
+          <%= link_to "Log in", new_user_session_path %>
+          <%= link_to "Sign up", new_user_registration_path %>
+      <%end %>
+      <%= link_to new_post_path, class:"newpost" do %>
+          <span class="name">Upload</span>
+      <%end %>
+    </div>
+    <div class="clearfix"></div>
+    <%= yield :category_bar %>
+  </div>
+
+
+  <div class="container">
     <%= yield %>
+
+  </div>
   </body>
 </html>
