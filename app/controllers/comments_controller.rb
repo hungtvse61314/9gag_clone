@@ -1,11 +1,21 @@
 class CommentsController < ApplicationController
   def index
+    @comments = Comment.all
+
+  end
+  def new
 
   end
   def create
-    @post = Post.find(params[:ids])
-    @comment = @post.comments.create(params[:comment].permit(:body).merge(user_id: current_user.id,post_id:current_post.id))
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.new(comment_params)
 
     redirect_to root_path(@post)
   end
+
+  private
+  def comment_params
+    params.require(:comment).permit(:body)
+  end
+
 end
